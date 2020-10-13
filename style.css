@@ -70,7 +70,7 @@ h2 {
 }
 nav {
     position: fixed;
-    top: 5px;
+    
     margin: 0px;
 }
 
@@ -117,7 +117,6 @@ svg:hover {
 #menu {
     visibility: hidden;
     position: fixed;
-    top: 5px;
     background-color: var(--header-color);
     padding-bottom: 35px;
     box-shadow: var(--header-color) 0px 0px 1px 1px;
@@ -136,8 +135,8 @@ main {
     min-height: 85vh;
     width: 90%;
     grid-template-rows: 15vh minmax(autofill, 40vh) minmax(autofill, 30vh);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "h2 h2 h2" "p p p" "html css js";
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "h2 h2 " "p p " "html css ";
     justify-items: center;
     justify-self: center;
     background-color: var(--bottom-head-bg);
@@ -203,27 +202,42 @@ p {
 .portfolio-content{display: flex;
     object-fit: contain;
     flex-wrap: wrap;
-    max-width: 70%;
+    max-width: 90%;
     margin: auto;
-    justify-content: center;
+    justify-content: space-around;
+    position: relative;
+    min-height: 50vh;
 }
-.hover-and-div{position: relative;}
-.portfolio-img{width: 30vw;
-    min-width: 200px;
+.img-and-hover{position: relative;
+    min-width: 300px;
+    width: 20%;
+    max-height: 230px;
+    overflow: hidden;
+    margin: 10px;
+    
+    
+    }
+.portfolio-img{
+    
 clip-path: inset(0px 7px 0px 0px);
 z-index: 2; 
 position: absolute;
 top: 0px;
 left: 0px;
+min-width: 300px;
+width: 100%;
 }
-.hover-div{min-width: 200px;
-width: 30vw;
+.hover-div{
+    min-width: 300px;
+width: 100%;
 position: absolute;
+z-index: 3;
 top: 0px;
-left: 0px;}
+left: 0px;
+background-color: red;}
 .hover-div:hover{background-color: black;
 
-z-index: 1;}
+z-index: 3;}
 
 
 .dark-theme {
@@ -231,6 +245,8 @@ z-index: 1;}
     color: var(--header-color);
     
 }
+.light-head:hover{color: var(--main-bg-color);}
+.dark-head:hover{color: var(--bottom-head-bg);}
 
 footer {
     display: grid;
