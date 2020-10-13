@@ -194,7 +194,6 @@ p {
 
 #portfolio-page {
     min-height: 80vh;
-    min-height: 200px;
     width: 100%;
     background-color: var(--bottom-head-bg);
     color: var(--bottom-head-color);
@@ -211,6 +210,7 @@ p {
 .img-and-hover{position: relative;
     min-width: 300px;
     width: 20%;
+    min-height: 200px;
     max-height: 230px;
     overflow: hidden;
     margin: 10px;
