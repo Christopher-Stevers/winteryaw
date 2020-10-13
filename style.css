@@ -193,30 +193,31 @@ p {
 }
 
 #portfolio-page {
+    display: grid;
+    align-items: center;
     min-height: 80vh;
     width: 100%;
     background-color: var(--bottom-head-bg);
     color: var(--bottom-head-color);
 }
 .portfolio-content{display: flex;
-    object-fit: contain;
+    
     flex-wrap: wrap;
-    max-width: 90%;
+    max-width: 50%;
     margin: auto;
+    align-content:center;
     justify-content: space-around;
     position: relative;
     min-height: 50vh;
 }
 .img-and-hover{position: relative;
-    min-width: 300px;
-    width: 20%;
-    min-height: 200px;
-    max-height: 230px;
+     min-height: 125px;
+    object-fit: contain;
+    min-width: 207px;
+    margin: 5px;
+    border: 8px solid black;
     overflow: hidden;
-    margin: 10px;
-    
-    
-    }
+        }
 .portfolio-img{
     
 clip-path: inset(0px 7px 0px 0px);
@@ -224,7 +225,7 @@ z-index: 2;
 position: absolute;
 top: 0px;
 left: 0px;
-min-width: 300px;
+min-width: 200px;
 width: 100%;
 }
 .hover-div{
