@@ -9,6 +9,7 @@
     vertical-align: baseline;
     background: transparent;
     text-decoration: none;
+    scroll-behavior: smooth;
     /*Thanks stack overflow*/
 }
 
