@@ -203,7 +203,8 @@ p {
 .portfolio-content{display: flex;
     
     flex-wrap: wrap;
-    max-width: 50%;
+    flex-direction: row;
+    max-width: 60%;
     margin: auto;
     align-content:center;
     justify-content: space-around;
@@ -211,34 +212,55 @@ p {
     min-height: 50vh;
 }
 .img-and-hover{position: relative;
-     min-height: 125px;
-    object-fit: contain;
-    min-width: 207px;
-    margin: 5px;
-    border: 8px solid black;
-    overflow: hidden;
-        }
-.portfolio-img{
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+    margin: 10px;
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
     
-clip-path: inset(0px 7px 0px 0px);
-z-index: 2; 
-position: absolute;
-top: 0px;
-left: 0px;
-min-width: 200px;
-width: 100%;
+        }
+        .row{display: flex;
+        flex-wrap: wrap;
+    justify-content: space-around;}
+.portfolio-img{width: 100%;
+    clip-path: inset(0px 5px 0px 0px);
+    position: relative;
+    left: 2.5px;
+    top: 1px;
+    max-width: 300px;
+    z-index: 1;
+    
 }
 .hover-div{
-    min-width: 300px;
-width: 100%;
-position: absolute;
-z-index: 3;
-top: 0px;
-left: 0px;
-background-color: red;}
+    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 1px;
+    max-width: 300px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: transparent;
+    
+    }
 .hover-div:hover{background-color: black;
+    opacity: .75;
+color: white;
+font-family: Raleway, sans-serif;
+font-weight: 400;
 
 z-index: 3;}
+.inline-link{
+text-decoration: underline;}
+.inline-link:hover{color: var(--main-bg-color);}
+.portfolio-text{
+    justify-self: center;
+}
 
 
 .dark-theme {
