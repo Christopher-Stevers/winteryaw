@@ -10,6 +10,7 @@
     background: transparent;
     text-decoration: none;
     scroll-behavior: smooth;
+    border: 1px solid black;
     /*Thanks stack overflow*/
 }
 
@@ -202,7 +203,7 @@ p {
     display: grid;
     align-items: center;
     min-height: 85vh;
-    max-width: 80%;
+    max-width: 100%;
     background-color: var(--bottom-head-bg);
     color: var(--bottom-head-color);
 }
@@ -343,7 +344,7 @@ input {
 textarea {
     max-width: 100%;
     min-height: auto;
-    margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 label {
