@@ -39,7 +39,7 @@ body {
 header {
     display: grid;
     grid-template-rows: minmax(100px, 55vh) minmax(50px, 15vh) minmax(50px, 15vh);
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
     background-color: var(--main-bg-color);
@@ -48,23 +48,24 @@ header {
     overflow: visible;
     min-height: 85vh;
     min-height: 200px;
+    padding-left: 20%;
 }
 
 h1 {
     font-size: clamp(3rem, 8vw, 4rem);
-    text-align: center;
+    text-align: left;
     width: 100%;
     height: 55vh;
     line-height: 55vh;
 }
-
+header>h2{text-align: left;}
 h2 {
     font-size: clamp(1.5rem, 3.5vw, 3rem);
     min-height: 50px;
     min-height: 15vh;
     align-items: center;
-    display: grid;
     text-align: center;
+    display: grid;
     width: 100%;
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
@@ -75,6 +76,8 @@ h2 {
 nav {
     position: fixed;
     margin: 0px;
+    background-color:(var(--bottom-head-color));
+    z-index: 10;
 }
 
 .nav-links {
@@ -139,7 +142,7 @@ main {
 #tech-page {
     display: grid;
     min-height: 85vh;
-    width: 90%;
+    width: 100%;
     grid-template-rows: 15vh minmax(autofill, 40vh) minmax(autofill, 30vh);
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "h2 h2 " "p p " "html css ";
@@ -155,6 +158,10 @@ h2.tech-head {
     min-height: 50px;
     grid-area: h2;
     display: grid;
+    text-align: left;
+    justify-content: start;
+    padding-left: 20%;
+    text-align: left;
 }
 
 .programming-skills {
@@ -192,6 +199,7 @@ p {
     font-weight: 400;
     font-size: clamp(1em, 3vw, 1.75em);
     padding: 5px;
+    max-width: 90%;
 }
 
 .about-me {
@@ -212,7 +220,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 60%;
+    max-width: 80%;
     margin: auto;
     align-content: center;
     justify-content: space-around;
