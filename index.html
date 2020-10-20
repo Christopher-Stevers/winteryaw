@@ -6,45 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJS Development</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/515327418366427136/766392042691231794/PkcrpAAAAAElFTkSuQmCC.png">
-<!--thanks! https://stackoverflow.com/questions/4888377/how-to-add-a-browser-tab-icon-favicon-for-a-website-->
+    <link rel="icon"
+        href="https://cdn.discordapp.com/attachments/515327418366427136/766392042691231794/PkcrpAAAAAElFTkSuQmCC.png">
+    <!--thanks! https://stackoverflow.com/questions/4888377/how-to-add-a-browser-tab-icon-favicon-for-a-website-->
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript” src=”https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-   $(document).ready(function () {
-    $("#contact-form").submit(function (e) {
-    const form = document.querySelector('form[id="contact-form"] ');
-    const username = form.elements["user_name"].value;
-    const userMail = form.elements["user_email"].value;
-    const subject = form.elements["subject"].value;
-    const message = form.elements["message"].value;
-    e.preventDefault();
-    var data = {
-    service_id: "service_oqnbbzb",
-    template_id: "template_2ogzbrc",
-    user_id: "user_2alctVHDRyRs2gc1ntQhw",
-    template_params: {
-    from_name: username,
-    from_email: userMail,
-    to_name: "Chris",
-    
-    subject: subject,
-    message: message
-    }
-    };
-    $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
-    type: "POST",
-    data: JSON.stringify(data),
-    contentType: "application/json"
-    }).done(function() {
-    alert("Your mail is sent!");
-    }).fail(function(error) {
-    alert("Oops… " + JSON.stringify(error));
-    })
-    })
-    })
+        $(document).ready(function () {
+            $("#contact-form").submit(function (e) {
+                const form = document.querySelector('form[id="contact-form"] ');
+                const username = form.elements["user_name"].value;
+                const userMail = form.elements["user_email"].value;
+                const subject = form.elements["subject"].value;
+                const message = form.elements["message"].value;
+                e.preventDefault();
+                var data = {
+                    service_id: "service_oqnbbzb",
+                    template_id: "template_2ogzbrc",
+                    user_id: "user_2alctVHDRyRs2gc1ntQhw",
+                    template_params: {
+                        from_name: username,
+                        from_email: userMail,
+                        to_name: "Chris",
+
+                        subject: subject,
+                        message: message
+                    }
+                };
+                $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
+                    type: "POST",
+                    data: JSON.stringify(data),
+                    contentType: "application/json"
+                }).done(function () {
+                    alert("Your mail is sent!");
+                }).fail(function (error) {
+                    alert("Oops… " + JSON.stringify(error));
+                })
+            })
+        })
     </script>
 </head>
 
@@ -65,8 +66,8 @@
         </div>
         <svg role="button" id="icon" onclick="displayList()" width="55" height="45">
             <rect width="35" height="5" y="10" x="10" fills="black" />
-            <rect width="35" height="5" y="20"x="10"  fill="black" />
-            <rect width="35" height="5" y="30"x="10"  fill="black" />
+            <rect width="35" height="5" y="20" x="10" fill="black" />
+            <rect width="35" height="5" y="30" x="10" fill="black" />
         </svg>
     </nav>
     <header>
@@ -77,78 +78,102 @@
     <main>
         <section id="tech-page">
             <h2 class="tech-head"><a class="light-head" href=#tech-page>Development</a></h2>
-            <p class="programming-skills">I enjoy building--and learning to build--responsive websites using HTML and CSS and a
+            <p class="programming-skills">I enjoy building--and learning to build--responsive websites using HTML and
+                CSS and a
                 smattering of Javascript. Recently I have adopted CSS Grid as my layout of choice. Right now my learning
-                is focused on building my Javascript knowledge, so I can build more interactive websites. I am also becoming familiar with Git and Github,
-                mostly through their Visual Studio Code integrations. If you are interested in my web development/design services feel free to <a class="inline-link" href=#contact-page>contact me.</a></p>
-            <img src="https://cdn.discordapp.com/attachments/515327418366427136/763009303564255232/HTML5.png" alt="HTML icon"> <img
-                src="https://cdn.discordapp.com/attachments/515327418366427136/763009299425001512/CSS.png" alt="CSS icon">
+                is focused on building my Javascript knowledge, so I can build more interactive websites. I am also
+                becoming familiar with Git and Github,
+                mostly through their Visual Studio Code integrations. If you are interested in my web development/design
+                services feel free to <a class="inline-link" href=#contact-page>contact me.</a></p>
+            <img src="https://cdn.discordapp.com/attachments/515327418366427136/763009303564255232/HTML5.png"
+                alt="HTML icon"> <img
+                src="https://cdn.discordapp.com/attachments/515327418366427136/763009299425001512/CSS.png"
+                alt="CSS icon">
             <!--<img
                 src="https://cdn.discordapp.com/attachments/515327418366427136/763009296791109673/JS.png">-->
         </section>
         <article id="me-page">
             <h2 class="me-head"><a class="dark-head" href=#me-page>Behind the Screen</a></h2>
             <section class="about-me">
-                
-                <p>Hi, I'm Chris Stevers, an aspiring front-end developer living in Southwestern Ontario. Growing up on a farm,
+
+                <p>Hi, I'm Chris Stevers, an aspiring front-end developer living in Southwestern Ontario. Growing up on
+                    a farm,
                     I've learned that you have to focus on the work that you accomplish, not the hours put in and
-                    I bring this product focused mindset to development. In reaching that end product, I wish to be a skilled, hard-working individual.
+                    I bring this product focused mindset to development. In reaching that end product, I wish to be a
+                    skilled, hard-working individual.
                 </p>
                 <p>I began studying coding from the back-end side and had a tough time becoming enthused with it. When
                     I discovered web development, though, I fell in love with it. As I continue to learn I hope to work
                     my way towards greater backend knowlege.
                 </p>
                 <p>If I'm not coding, you will probably find me farming, playing games, or studying an instrument.</p>
-                <img id="thumbnail-img"src="https://cdn.discordapp.com/attachments/515327418366427136/766607993839550494/IMG_2909.JPG" alt="my profile picture">
+                <img id="thumbnail-img"
+                    src="https://cdn.discordapp.com/attachments/515327418366427136/766607993839550494/IMG_2909.JPG"
+                    alt="my profile picture">
             </section>
         </article>
         <article id="portfolio-page">
             <h2><a class="light-head" href=#portfolio-page>Portfolio</a></h2>
             <section class="portfolio-content">
-                
-               <div class="row"> <div class="img-and-hover">
-                    <a href="https://cdpn.io/Lord-Falcon/debug/XWXGyGY/VGkWNxqOynxA" class="hover-div">Religion Blog Theme</a>
-                    <img class="portfolio-img"
-                        src="https://cdn.discordapp.com/attachments/515327418366427136/765877106135138304/cdpn.io_Lord-Falcon_debug_XWXGyGY_VGkWNxqOynxA_2.png" alt="">
-                </div>
-                <div class="img-and-hover">
-                    <a href="https://cdpn.io/Lord-Falcon/debug/xxVeaQg/NQMzYBVzmKWk"  alt="" class="hover-div">Ration Cost Calculator</a>
-                    
-                    <img class="portfolio-img"
-                        src="https://cdn.discordapp.com/attachments/515327418366427136/765877690174668800/cdpn.io_Lord-Falcon_debug_xxVeaQg_yPMJjKQJZJDM_1.png" alt=""> 
-                </div></div>
-                <div class="row"><div class="img-and-hover">
-                    <a href="https://cdpn.io/Lord-Falcon/debug/BaKqZEy/DqrDdgOnvLqr" class="hover-div">History Blog Theme</a>
-                    <img class="portfolio-img"
-                        src="https://cdn.discordapp.com/attachments/515327418366427136/765878068438892544/cdpn.io_Lord-Falcon_debug_BaKqZEy_DqrDdgOnvLqr_1.png" alt="">
-                </div>
-                <div class="img-and-hover">
-                    <a href="https://cdpn.io/Lord-Falcon/debug/eYzJzqw/XxMVwjJzzbnr" class="hover-div">Farm Website</a>
-                    <img class="portfolio-img"
-                        src="https://cdn.discordapp.com/attachments/515327418366427136/765878740420263946/127.0.0.1_5500_Whirl.html.png" alt="">
-                </div></div>
-                
 
-           
+                <div class="row">
+                    <div class="img-and-hover">
+                        <a href="https://cdpn.io/Lord-Falcon/debug/XWXGyGY/VGkWNxqOynxA" class="hover-div">Religion Blog
+                            Theme</a>
+                        <img class="portfolio-img"
+                            src="https://cdn.discordapp.com/attachments/515327418366427136/765877106135138304/cdpn.io_Lord-Falcon_debug_XWXGyGY_VGkWNxqOynxA_2.png"
+                            alt="">
+                    </div>
+                    <div class="img-and-hover">
+                        <a href="https://cdpn.io/Lord-Falcon/debug/xxVeaQg/NQMzYBVzmKWk" alt="" class="hover-div">Ration
+                            Cost Calculator</a>
+
+                        <img class="portfolio-img"
+                            src="https://cdn.discordapp.com/attachments/515327418366427136/765877690174668800/cdpn.io_Lord-Falcon_debug_xxVeaQg_yPMJjKQJZJDM_1.png"
+                            alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="img-and-hover">
+                        <a href="https://cdpn.io/Lord-Falcon/debug/BaKqZEy/DqrDdgOnvLqr" class="hover-div">History Blog
+                            Theme</a>
+                        <img class="portfolio-img"
+                            src="https://cdn.discordapp.com/attachments/515327418366427136/765878068438892544/cdpn.io_Lord-Falcon_debug_BaKqZEy_DqrDdgOnvLqr_1.png"
+                            alt="">
+                    </div>
+                    <div class="img-and-hover">
+                        <a href="https://cdpn.io/Lord-Falcon/debug/eYzJzqw/XxMVwjJzzbnr" class="hover-div">Farm
+                            Website</a>
+                        <img class="portfolio-img"
+                            src="https://cdn.discordapp.com/attachments/515327418366427136/765878740420263946/127.0.0.1_5500_Whirl.html.png"
+                            alt="">
+                    </div>
+                </div>
+
+
+
             </section>
-            <p class="portfolio-text">Check out <a class="inline-link" href="https://github.com/Christopher-Stevers">my Github</a> !</p>
+            <p class="portfolio-text">Check out <a class="inline-link" href="https://github.com/Christopher-Stevers">my
+                    Github</a> !</p>
         </article>
         <article id="contact-page">
             <h2><a class="dark-head" href=#contact-page>Contact</a>
             </h2>
-            <section><form id="contact-form">
-                <input type="hidden" name="contact_number">
-                <label>Name</label><input type="text" name="user_name" id="user_name">
-                
-                <label>Email</label>
-                <input type="email" name="user_email" id="user_email">
-                
-                <label>Subject</label>
-                
-                <input type="text" name="subject" id="subject"><label>Message</label>
-                <textarea name="message" id="message"></textarea>
-                <input id="send" type="submit" value="Send">
-                </form></section>
+            <section>
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <label>Name</label><input type="text" name="user_name" id="user_name">
+
+                    <label>Email</label>
+                    <input type="email" name="user_email" id="user_email">
+
+                    <label>Subject</label>
+
+                    <input type="text" name="subject" id="subject"><label>Message</label>
+                    <textarea name="message" id="message"></textarea>
+                    <input id="send" type="submit" value="Send">
+                </form>
+            </section>
         </article>
     </main>
 
