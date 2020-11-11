@@ -174,7 +174,7 @@ img {
     grid-row-start: 3;
     grid-row-end: 3;
 }
-
+.me-head{justify-items: start;}
 #me-page {
     display: grid;
     grid-template-rows: minmax(autofill 70vh);
