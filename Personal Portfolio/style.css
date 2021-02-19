@@ -186,7 +186,7 @@ p {
 }
 
 
-}
+
 
 .about-me {
     justify-self: center;
@@ -203,7 +203,8 @@ p {
 }
 .portfolio-content{display:grid;
 grid-template-rows: 1fr 1fr 1fr;
-grid-template-columns: 1fr 1fr 1fr;}
+grid-template-columns: 1fr 1fr 1fr;
+width: 100%;}
 .dark-theme {
     background-color: var(--main-bg-color);
     color: var(--header-color);

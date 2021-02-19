@@ -10,6 +10,7 @@
     background: transparent;
     text-decoration: none;
     scroll-behavior: smooth;
+    font-family: inherit;
     /*Thanks stack overflow*/
 }
 
@@ -19,7 +20,7 @@ a {
 }
 
 :root {
-    --main-bg-color: #661C31;
+    --main-bg-color: #800125;
     --header-color: #90A7AD;
     --bottom-head-bg: white;
     --bottom-head-color: #4c5b5e;
@@ -34,6 +35,8 @@ body {
     justify-items: center;
     margin: 0px;
     padding: 0px;
+    
+    font-family: Raleway, sans-serif;
 }
 
 header {
@@ -104,27 +107,6 @@ nav {
     align-items: center;
 }
 
-@media screen and (max-width: 900px) {
-    #items {
-        grid-template-columns: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
-        grid-template-rows: auto;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    #items {
-        grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr 1fr;
-        height: 100vh;
-        margin: 0px;
-        font-size: 2em;
-    }
-}
-
-svg:hover {
-    cursor: pointer;
-}
-
 #menu {
     visibility: hidden;
     position: fixed;
@@ -143,36 +125,50 @@ main {
     display: grid;
     min-height: 85vh;
     width: 100%;
-    grid-template-rows: 15vh minmax(autofill, 40vh) minmax(autofill, 30vh);
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "h2 h2 " "p p " "html css ";
+    grid-template-rows: 15vh minmax(autofill, 40vh);
+    grid-template-columns: 1fr  1fr;
+    grid-template-areas: "h2 skill"
+    "p   list" ;
     justify-items: center;
     justify-self: center;
     background-color: var(--bottom-head-bg);
     color: var(--bottom-head-color);
     object-fit: contain;
+    padding-left: 20%;
 }
+@media screen and (max-width: 500px){
+    #tech-page{grid-template-columns: 1fr;
+        
+    grid-template-rows: 15vh minmax(autofill, 40vh) 15vh minmax(autofill, 40vh);
+    grid-template-areas: "h2"
+    "p"
+    "skill"
 
-h2.tech-head {
+"list"
+    
+    }
+}
+h2.tech-head{
+    grid-area: h2;}
+h2.tech-head, h2.skill-header {
     height: 15vh;
     min-height: 50px;
-    grid-area: h2;
     display: grid;
     text-align: left;
     justify-content: start;
-    padding-left: 20%;
     text-align: left;
 }
 
 .programming-skills {
     grid-area: p;
+    justify-self: start;
 }
 
 img {
     width: 10vw;
     min-width: 35px;
-    grid-row-start: 3;
-    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 .me-head{justify-items: start;}
 #me-page {
@@ -182,9 +178,9 @@ img {
     align-content: start;
     justify-items: center;
     justify-content: center;
-    background-color: var(--main-bg-color);
-    color: var(--header-color);
     min-height: 85vh;
+    background-color: var(--bottom-head-bg);
+    color: var(--bottom-head-color);
 }
 
 #thumbnail-img {
@@ -204,7 +200,6 @@ p {
 
 .about-me {
     justify-self: center;
-    color: var(--header-color);
 }
 
 #portfolio-page {
@@ -212,15 +207,15 @@ p {
     align-items: center;
     min-height: 85vh;
     max-width: 100%;
-    background-color: var(--bottom-head-bg);
-    color: var(--bottom-head-color);
+    background-color: var(--main-bg-color);
+    color: var(--header-color);
 }
 
 .portfolio-content {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
     align-content: center;
     justify-content: space-around;
@@ -278,13 +273,14 @@ p {
     z-index: 3;
 }
 
-.inline-link {
+.inline-link, .white-inline-link {
     text-decoration: underline;
 }
 
 .inline-link:hover {
     color: var(--main-bg-color);
 }
+.white-inline-link:hover{color: var(--bottom-head-bg);}
 
 .portfolio-text {
     justify-self: center;
@@ -377,7 +373,7 @@ footer {
     min-height: 15vh;
 }
 
-svg {
+svg.menu-svg {
     background-color: var(--header-color);
     position: relative;
     margin-top: 25px;
@@ -389,11 +385,13 @@ svg {
     justify-content: center;
 }
 
-svg:hover {
+svg.menu-svg:hover {
     animation-name: hovering;
     animation-name: hovering;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    
+    cursor: pointer;
 }
 
 @keyframes hovering {
@@ -407,4 +405,45 @@ svg:hover {
         border-color: #002244;
         background-color: #FFFAFA;
     }
+}
+.skill-header{grid-area: skill;
+font-size:  clamp(1.5rem, 3.5vw, 3rem);}
+.icon-list>li>svg{
+    height: clamp(1em, 3vw, 1.75em);
+    position: relative;
+    /*top: (1em, 3vw, 1.75em);*/
+}
+.icon-list{
+grid-area: list;
+justify-self: start;
+position: relative;
+grid-template-columns: 1fr 1fr 1fr;}
+
+ul.icon-list>li{
+padding: 4px 0px;
+min-width: 150px;
+
+display: flex;
+justify-content: start;}
+
+.icon-list>li>span{
+font-size: clamp(1em, 3vw, 1.75em);
+padding-left:  clamp(1em, 3vw, 1.75em);}
+
+@media screen and (max-width: 900px) {
+    #items {
+        grid-template-columns: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
+        grid-template-rows: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #items {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 100vh;
+        margin: 0px;
+        font-size: 2em;
+    }
+    .icon-list>li>svg{margin-left: 0px;}
 }
