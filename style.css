@@ -25,6 +25,10 @@ a {
     --bottom-head-bg: white;
     --bottom-head-color: #4c5b5e;
     --nav-comp: #002244;
+    --text-font: clamp(1rem, 3vw, 1.5rem);
+    --h1-font: clamp(3rem, 8vw, 4rem);
+    --h2-font: clamp(1.5rem, 3.5vw, 3rem);
+    font-size: 14px;
 }
 
 body {
@@ -37,8 +41,12 @@ body {
     padding: 0px;
     
     font-family: Raleway, sans-serif;
+   
 }
-
+ @media screen and (max-width: 601px) {
+        h1{position: relative;
+        top: 100px;}
+    }
 header {
     display: grid;
     grid-template-rows: minmax(100px, 55vh) minmax(50px, 15vh) minmax(50px, 15vh);
@@ -55,7 +63,7 @@ header {
 }
 
 h1 {
-    font-size: clamp(3rem, 8vw, 4rem);
+    font-size: var(--h1-font);
     text-align: left;
     width: 100%;
     height: 55vh;
@@ -63,7 +71,7 @@ h1 {
 }
 header>h2{text-align: left;}
 h2 {
-    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    font-size: var(--h2-font);
     min-height: 50px;
     min-height: 15vh;
     align-items: center;
@@ -90,7 +98,7 @@ nav {
     font-weight: 600;
     white-space: nowrap;
     width: 100%;
-    padding: 30px 20px 30px 90px;
+    padding: 30px  30px 30px 90px;
 }
 
 .nav-links:hover {
@@ -135,6 +143,8 @@ main {
     color: var(--bottom-head-color);
     object-fit: contain;
     padding-left: 20%;
+    align-content: start;
+    align-items: start;
 }
 @media screen and (max-width: 500px){
     #tech-page{grid-template-columns: 1fr;
@@ -150,7 +160,7 @@ main {
 }
 h2.tech-head{
     grid-area: h2;}
-h2.tech-head, h2.skill-header {
+h2.tech-head {
     height: 15vh;
     min-height: 50px;
     display: grid;
@@ -177,10 +187,11 @@ img {
     grid-template-columns: 80%;
     align-content: start;
     justify-items: center;
-    justify-content: center;
+    justify-content: start;
     min-height: 85vh;
     background-color: var(--bottom-head-bg);
     color: var(--bottom-head-color);
+    padding-left: 20%;
 }
 
 #thumbnail-img {
@@ -193,7 +204,7 @@ img {
 p {
     font-family: Raleway, sans-serif;
     font-weight: 400;
-    font-size: clamp(1em, 3vw, 1.75em);
+    font-size: var(--text-font) ;
     padding: 5px;
     max-width: 90%;
 }
@@ -204,7 +215,7 @@ p {
 
 #portfolio-page {
     display: grid;
-    align-items: center;
+    align-items: start;
     min-height: 85vh;
     max-width: 100%;
     background-color: var(--main-bg-color);
@@ -217,7 +228,7 @@ p {
     flex-direction: row;
     max-width: 100%;
     margin: auto;
-    align-content: center;
+    align-content: start;
     justify-content: space-around;
     position: relative;
     min-height: 50vh;
@@ -354,7 +365,7 @@ textarea {
 label {
     font-family: Raleway, sans-serif;
     font-weight: 400;
-    font-size: clamp(1em, 3vw, 1.75em);
+    font-size: var(--text-font) ;
     
     margin: 15px 0px 15px 0px;
 }
@@ -388,7 +399,7 @@ svg.menu-svg {
 svg.menu-svg:hover {
     animation-name: hovering;
     animation-name: hovering;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
     
     cursor: pointer;
@@ -406,10 +417,9 @@ svg.menu-svg:hover {
         background-color: #FFFAFA;
     }
 }
-.skill-header{grid-area: skill;
-font-size:  clamp(1.5rem, 3.5vw, 3rem);}
+
 .icon-list>li>svg{
-    height: clamp(1em, 3vw, 1.75em);
+    height: var(--text-font) ;
     position: relative;
     /*top: (1em, 3vw, 1.75em);*/
 }
@@ -427,23 +437,31 @@ display: flex;
 justify-content: start;}
 
 .icon-list>li>span{
-font-size: clamp(1em, 3vw, 1.75em);
-padding-left:  clamp(1em, 3vw, 1.75em);}
+font-size: var(--text-font) ;
+padding-left:  var(--text-font) ;}
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1330px) {
     #items {
-        grid-template-columns: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
-        grid-template-rows: auto;
+        display: flex;
+        flex-wrap: wrap;
     }
+    .nav-links{max-width: min-content;
+    padding-left: 30px;}
 }
+
 
 @media screen and (max-width: 500px) {
     #items {
+        display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr 1fr;
-        height: 100vh;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         margin: 0px;
         font-size: 2em;
+        height: calc(100vh - 90px);
     }
+    .nav-links{max-width: 100%;
+    padding: 10px 10px 10px 90px;}
+    #menu{width: 100%;
+    height: 100vh;}
     .icon-list>li>svg{margin-left: 0px;}
 }

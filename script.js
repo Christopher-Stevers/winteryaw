@@ -1,4 +1,4 @@
-  
+  //from Sucheta https://medium.com/@shrivastavasucheta/sending-an-email-using-emailjs-gmail-service-to-be-used-in-javascript-d6eb92ed0c7c
   $(document).ready(function () {
         $("#contact-form").submit(function (e) {
             const form = document.querySelector('form[id="contact-form"] ');
@@ -31,12 +31,18 @@
             })
         })
     })
-    function displayList() {
-        document.getElementById("menu").style.visibility = "visible";
-        document.getElementById("icon").style.visibility = "hidden";
-    };
-    function hideList() {
-        document.getElementById("icon").style.visibility = "visible";
-        document.getElementById("menu").style.visibility = "hidden";
-    };
-  
+    
+    window.addEventListener(`click`,function(e){
+     
+        if(document.getElementById("menu").style.visibility ==="visible"&&  !document.getElementById("menu").contains(e.target)&&!document.getElementById("icon").contains(e.target))     
+          {document.getElementById("menu").style.visibility = "hidden";      
+         document.getElementById("icon").style.visibility = "visible";}
+    });
+  document.getElementById("exit-list").addEventListener('click', function(){
+    document.getElementById("icon").style.visibility = "visible";
+    document.getElementById("menu").style.visibility = "hidden";
+
+  });
+  document.getElementById("icon").addEventListener('click',   function(){
+   document.getElementById("menu").style.visibility = "visible";
+   document.getElementById("icon").style.visibility = "hidden";});
