@@ -1,5 +1,5 @@
   //from Sucheta https://medium.com/@shrivastavasucheta/sending-an-email-using-emailjs-gmail-service-to-be-used-in-javascript-d6eb92ed0c7c
-  $(document).ready(function () {
+ /* $(document).ready(function () {
         $("#contact-form").submit(function (e) {
             const form = document.querySelector('form[id="contact-form"] ');
             const username = form.elements["user_name"].value;
@@ -30,8 +30,26 @@
                 alert("Oops… " + JSON.stringify(error));
             })
         })
-    })
-    
+    })*/document.getElementById("send").addEventListener("click", function(event){
+  event.preventDefault()
+});
+    const sendEmail=()=>{
+        let templateParams={
+            user_name: document.getElementById("user_name").value,
+            user_email: document.getElementById("user_email").value,
+            message:  document.getElementById("message").value,
+            subject: document.getElementById("subject").value
+        }
+      console.log(templateParams);
+        emailjs.send('service_oqnbbzb', 'template_yeufvle', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
+    }
+   
     window.addEventListener(`click`,function(e){
      
         if(document.getElementById("menu").style.visibility ==="visible"&&  !document.getElementById("menu").contains(e.target)&&!document.getElementById("icon").contains(e.target))     
