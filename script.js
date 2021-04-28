@@ -44,7 +44,13 @@
         emailjs.send('service_oqnbbzb', 'template_yeufvle', templateParams)
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
+       document.getElementById("user_name").value=""
+       document.getElementById("message").value=""
+       document.getElementById("subject").value=""
+      document.getElementById("user_email").value=""
+        window.alert("Your message has been sent")
     }, function(error) {
+        window.alert("Your message has not been sent, please contact christopher.stevers1@gmail.com")
        console.log('FAILED...', error);
     });
 
