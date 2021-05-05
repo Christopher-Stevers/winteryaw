@@ -256,6 +256,7 @@ p {
     top: 1px;
     max-width: 300px;
     z-index: 1;
+    height: 150px;
 }
 
 .hover-div {
