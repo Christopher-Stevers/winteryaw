@@ -273,6 +273,7 @@ p {
 }
 
 .hover-div:hover {
+    cursor: pointer;
     background-color: black;
     opacity: .75;
     color: white;
@@ -462,3 +463,37 @@ padding-left:  var(--text-font) ;}
     height: 100vh;}
     .icon-list>li>svg{margin-left: 0px;}
 }
+.fixed{position: absolute;
+    border: 10px solid black;
+top: 185vh;
+
+left: 0;
+right: 0;
+margin: 0 auto;
+padding: 5vh;
+width: 600px;
+max-width: 90%;
+display:grid;
+justify-content:center;
+align-items: center;
+align-content: center;
+background-color: white;
+z-index: 20;
+color: var(--bottom-head-color);
+}
+.fixed>*{padding: 10px;}
+.fixed>h3{font-size: 2rem;}
+.fixed>button{border: 2px solid black;
+    justify-self: right;
+    cursor: pointer;
+    padding: 0px;
+    color: black;
+width:2rem;
+height: 2rem;}
+.fixed>button:hover{background-color: var(--header-color);}
+.fixed>*>a{text-decoration: underline;}
+
+.fixed>*>a:hover{color: black}
+.modal-link{display: flex;
+justify-content: space-between;
+font-size: 1.5rem}

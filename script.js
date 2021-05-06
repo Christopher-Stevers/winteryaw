@@ -70,3 +70,76 @@
   document.getElementById("icon").addEventListener('click',   function(){
    document.getElementById("menu").style.visibility = "visible";
    document.getElementById("icon").style.visibility = "hidden";});
+
+
+   const paraGraph=(x)=>{
+console.log(x)
+let returned;
+    switch(x){
+        case "calc":
+            returned = `
+            <h3>Feed Cost Calculator</h3>
+            <p>Every other quarter, my family had to go through the tedious task of finding the cost of production on are hogs.
+            This is the second edition of my solution to this problem. It allows the user to input a some simnple data which can be
+             found in farm records, and then calculates the cost of feed which is connected to the data. For a simple problem you 
+             only need a simple solution, therefore I've used HTML CSS and JS to create this little tool. <div class="modal-link"><a href="https://christopher-stevers.github.io/Feed-Calc/">
+             Live site</a><a href="https://github.com/Christopher-Stevers/Feed-Calc/tree/master">Code</a></div></p>`
+
+    break;
+   case "stonks":
+            returned=`
+            
+            <h3>Stock Tracker</h3>
+            <p>When I saw the twelvedata api in used in <a href="https://github.com/flyingfisch/FischBotDiscord-csharp">a discord bot</a> I was intrigued. 
+            At the time I was studying freeCodeCamp's data-vis curriculum. When I put the two together I got this SPA.
+             It allows the user to view a barchart visualization of the history of the stock of their choice over the past 30 weeks. 
+             To create the visualisation I used the <a href="https://twelvedata.com">12data api</a> and D3.js. The app is bootstrapped with create-react-app, but could just have coded just with HTML and D3.
+             <div class="modal-link">
+             <a href="https://stonksyee.tk/">
+             Live site</a><a href="https://github.com/Christopher-Stevers/stock-tracker">Code</a></div></p>`
+    
+    break;
+    case "whirl": 
+         returned=`
+         <h3>Whirl Creek Farm Demo</h3><p>My parent's farm was lacking in online presence, which could be a valuable asset for their organic direct sales. To solve this problem I created a modern website which informs the consumer, browse products, and send orders to my email. 
+         Note, this site is a demo, so while it is functional, we are not filling orders, and the contact information is not accurate. To build this single page app, I used React, and learned to manage global state with React's Context api.<div class="modal-link"><a href="https://whirlcreekfarm.ga/">
+         Live site</a><a href="https://github.com/Christopher-Stevers/actual-react-whirl">Code</a></div></p>`
+    break;
+    case "kanbeano":
+        returned=`<h3>Kanbeano</h3><p>Kanbeano is my take on the kanban board. I was heard about the concept from another dev 
+        and was looking for a fullstack project so I built this. Kanbeano featires a clean ui where you can build private lists, save and edit them.
+         The lists are stored in a Mongo database and accessed through a RESTful api built in node. The entire project is built on the Next.js framework
+          for React which mainly for its backend functionality. However its other features, like built-in SCSS, are as well. Finally, I used the next-auth and
+          react-beautiful-dnd libraries to polish it off.<div class="modal-link"><a href="https://new-kanbeano.vercel.app/">
+          Live site</a><a href="https://github.com/Christopher-Stevers/NewKanbeano">Code</a></div></p>` 
+          break;}
+return returned
+
+   }
+   const overlayFunc=(e)=>{
+       if(document.querySelector(".fixed")){
+        const modal= document.querySelector(".fixed");
+         modal.remove();
+   }
+       const myText=paraGraph(e.target.id);
+       const newElem=document.createElement("div");
+       newElem.id=e.target.id+"overlay";
+       newElem.className="fixed"
+       newElem.innerHTML=`<button class=${e.target.id}>x</button>${myText}`
+       console.log(document.querySelector("body"));
+       if(newElem){
+     document.getElementById("portfolio-page").appendChild(newElem);
+    document.querySelector("."+e.target.id).addEventListener("click", (e)=>{
+        console.log(e.target.className);
+        let elemId=e.target.className+"overlay"
+        let elem=document.getElementById(elemId);
+        console.log(elem)
+        elem.remove()
+        })}
+
+       
+       
+       
+       }
+   const hovers=document.querySelectorAll(".hover-div");
+   hovers.forEach(elem=>elem.addEventListener("click", overlayFunc));
