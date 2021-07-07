@@ -124,17 +124,21 @@ return returned
        const newElem=document.createElement("div");
        newElem.id=e.target.id+"overlay";
        newElem.className="fixed"
-       newElem.innerHTML=`<button class=${e.target.id}>x</button>${myText}`
+       newElem.innerHTML=`<div class="wrapper"><button class=${e.target.id}>x</button>${myText}</div>`
        console.log(document.querySelector("body"));
        if(newElem){
      document.getElementById("portfolio-page").appendChild(newElem);
-    document.querySelector("."+e.target.id).addEventListener("click", (e)=>{
+     const removeModal=()=>{
         console.log(e.target.className);
         let elemId=e.target.className+"overlay"
         let elem=document.getElementById(elemId);
         console.log(elem)
-        elem.remove()
-        })}
+      if(document.querySelector(".fixed")) document.querySelector(".fixed").remove();
+
+     }
+    document.querySelector("."+e.target.id).addEventListener("click", removeModal);
+    document.querySelector(".fixed", removeModal).addEventListener("click", removeModal);
+}
 
        
        

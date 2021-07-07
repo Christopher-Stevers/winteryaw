@@ -82,6 +82,7 @@ h2 {
 
 nav {
     position: fixed;
+    top: 0px;left: 0px;
     margin: 0px;
     background-color:(var(--bottom-head-color));
     z-index: 10;
@@ -127,7 +128,7 @@ main {
 
 #tech-page {
     display: grid;
-    min-height: 85vh;
+    min-height: 45vh;
     width: 100%;
     grid-template-rows: 15vh minmax(autofill, 40vh);
     grid-template-columns: 1fr  1fr;
@@ -142,7 +143,7 @@ main {
     align-content: start;
     align-items: start;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 1000px){
     #tech-page{grid-template-columns: 1fr;
         
     grid-template-rows: 15vh minmax(autofill, 40vh) 15vh minmax(autofill, 40vh);
@@ -153,6 +154,7 @@ main {
 "list"
     
     }
+    .icon-list{padding: 1rem 0px;}
 }
 h2.tech-head{
     grid-area: h2;}
@@ -425,6 +427,7 @@ svg.menu-svg:hover {
 grid-area: list;
 justify-self: start;
 position: relative;
+
 grid-template-columns: 1fr 1fr 1fr;}
 
 ul.icon-list>li{
@@ -463,37 +466,42 @@ padding-left:  var(--text-font) ;}
     height: 100vh;}
     .icon-list>li>svg{margin-left: 0px;}
 }
-.fixed{position: absolute;
-    border: 10px solid black;
-top: 185vh;
+.fixed{position: fixed;
+    height: 100vh;
+    width: 100%;
+top: 0px;
 
 left: 0;
 right: 0;
-margin: 0 auto;
-padding: 5vh;
-width: 600px;
-max-width: 90%;
+padding: 20%;
+max-width: 100%;
 display:grid;
 justify-content:center;
 align-items: center;
 align-content: center;
-background-color: white;
+background-color: hsla(0, 0%, 0%, 0.24);
 z-index: 20;
 color: var(--bottom-head-color);
 }
-.fixed>*{padding: 10px;}
-.fixed>h3{font-size: 2rem;}
-.fixed>button{border: 2px solid black;
+.wrapper{
+    display: grid;
+    border: 10px solid black;
+    box-shadow: 0px 0px 1px 1px black;
+}
+.fixed>*{padding: 10px;
+background-color:white;}
+.wrapper>h3{font-size: 2rem;}
+.wrapper>button{border: 2px solid black;
     justify-self: right;
     cursor: pointer;
     padding: 0px;
     color: black;
 width:2rem;
 height: 2rem;}
-.fixed>button:hover{background-color: var(--header-color);}
-.fixed>*>a{text-decoration: underline;}
+.wrapper>button:hover{background-color: var(--header-color);}
+.wrapper>*>a{text-decoration: underline;}
 
-.fixed>*>a:hover{color: black}
+.wrapper>*>a:hover{color: black}
 .modal-link{display: flex;
 justify-content: space-between;
 font-size: 1.5rem}
