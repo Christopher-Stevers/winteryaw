@@ -94,7 +94,7 @@ let returned;
              It allows the user to view a barchart visualization of the history of a stock of their choice over the past 30 weeks. 
              It's bootstrapped with create-react-app, and the visualization is in D3.js
              <div class="modal-link">
-             <a href="https://stonksyee.tk/">
+             <a href="https://fervent-bassi-16f84e.netlify.app/">
              Live site</a><a href="https://github.com/Christopher-Stevers/stock-tracker">Code</a></div></p>`
     
     break;
