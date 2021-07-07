@@ -25,7 +25,7 @@ a {
     --bottom-head-bg: white;
     --bottom-head-color: #4c5b5e;
     --nav-comp: #002244;
-    --text-font: clamp(1rem, 3vw, 1.5rem);
+    --text-font: clamp(1.2rem, 3vw, 1.5rem);
     --h1-font: clamp(3rem, 8vw, 4rem);
     --h2-font: clamp(1.5rem, 3.5vw, 3rem);
     font-size: 14px;
@@ -473,8 +473,7 @@ top: 0px;
 
 left: 0;
 right: 0;
-padding: 20%;
-max-width: 100%;
+padding: 10%;
 display:grid;
 justify-content:center;
 align-items: center;
@@ -484,6 +483,7 @@ z-index: 20;
 color: var(--bottom-head-color);
 }
 .wrapper{
+max-width: 600px;
     display: grid;
     border: 10px solid black;
     box-shadow: 0px 0px 1px 1px black;
