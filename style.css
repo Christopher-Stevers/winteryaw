@@ -236,7 +236,8 @@ p {
     position: relative;
     width: 100%;
     max-width: 300px;
-    padding: 5px;
+    padding: 1rem;
+    border-radius: 2px;
     margin: 1%;
     background-color: black;
     display: grid;
@@ -245,9 +246,12 @@ p {
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    width: 1000px;
+    grid-gap: 4rem;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-template-columns: repeat(autofill, minmax( 200px, 1fr));
+    justify-content: center
 }
 
 .portfolio-img {
