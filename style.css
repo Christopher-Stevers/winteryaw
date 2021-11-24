@@ -431,6 +431,8 @@ grid-area: list;
 justify-self: start;
 position: relative;
 display: grid;
+justify-content: space-around;
+width: 100%;
 grid-template-columns: 1fr 1fr;}
 
 ul.icon-list>li{
