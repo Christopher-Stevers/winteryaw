@@ -101,15 +101,12 @@ let returned;
     case "whirl": 
          returned=`
          <h3>Whirl Creek Farm Demo</h3><p>My parent's farm was lacking in online presence, which could be a valuable asset for their organic direct sales. To solve this problem I created a modern website which allows the user to browse products, contact us, and send their orders to my email. 
-         As this site is a demo, orders from it will not be filled, and the contact information is not accurate. To build this single page app, I used React, and managed global state with React's Context api.<div class="modal-link"><a href="https://whirlcreekfarm.ga/">
+         As this site is currently a demo, orders from it will not be filled, and the contact information is not accurate. It was built on create-react-app.<div class="modal-link"><a href="https://whirlcreekfarm.ga/">
          Live site</a><a href="https://github.com/Christopher-Stevers/actual-react-whirl">Code</a></div></p>`
     break;
     case "kanbeano":
-        returned=`<h3>Kanbeano</h3><p>Kanbeano is my take on the kanban board. I was heard about the concept from another dev 
-        and was looking for a fullstack project so I built this. Kanbeano features a clean ui where you can build private lists, save and edit them.
-         The lists are stored in a Mongo database and accessed through a RESTful api built in node. The entire project is built on the Next.js framework
-          for React which I used for its backend functionality. However its other features, like built-in SCSS processing, are a plus as well. Finally, I used the next-auth and
-          react-beautiful-dnd libraries to add auth and drag-and-drop to the app.<div class="modal-link"><a href="https://new-kanbeano.vercel.app/">
+        returned=`<h3>Kanbeano</h3><p>Kanbeano is my take on the Kanban board. It allows the user to build shareable lists, save and edit them, all in a beautiful, responsive UI.
+         Kanbeano is built with MongoDB and leverages Next.js for server-side rendering and serveless functions. <div class="modal-link"><a href="https://new-kanbeano.vercel.app/">
           Live site</a><a href="https://github.com/Christopher-Stevers/NewKanbeano">Code</a></div></p>` 
           break;}
 return returned

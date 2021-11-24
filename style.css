@@ -430,11 +430,11 @@ svg.menu-svg:hover {
 grid-area: list;
 justify-self: start;
 position: relative;
-
-grid-template-columns: 1fr 1fr 1fr;}
+display: grid;
+grid-template-columns: 1fr 1fr;}
 
 ul.icon-list>li{
-padding: 4px 0px;
+padding: 4px 0 4px 0;
 min-width: 150px;
 
 display: flex;
