@@ -30,52 +30,54 @@
                 alert("Oops… " + JSON.stringify(error));
             })
         })
-    })*/document.getElementById("send").addEventListener("click", function(event){
-  event.preventDefault()
-});
-    const sendEmail=()=>{
-        let templateParams={
-            user_name: document.getElementById("user_name").value,
-            user_email: document.getElementById("user_email").value,
-            message:  document.getElementById("message").value,
-            subject: document.getElementById("subject").value
-        }
-      console.log(templateParams);
-        emailjs.send('service_oqnbbzb', 'template_yeufvle', templateParams)
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-       document.getElementById("user_name").value=""
-       document.getElementById("message").value=""
-       document.getElementById("subject").value=""
-      document.getElementById("user_email").value=""
-        window.alert("Your message has been sent")
-    }, function(error) {
-        window.alert("Your message has not been sent, please contact christopher.stevers1@gmail.com")
-       console.log('FAILED...', error);
+    })*/document.getElementById("send").addEventListener("click", function (event) {
+        event.preventDefault()
     });
-
+const sendEmail = () => {
+    let templateParams = {
+        user_name: document.getElementById("user_name").value,
+        user_email: document.getElementById("user_email").value,
+        message: document.getElementById("message").value,
+        subject: document.getElementById("subject").value
     }
-   
-    window.addEventListener(`click`,function(e){
-     
-        if(document.getElementById("menu").style.visibility ==="visible"&&  !document.getElementById("menu").contains(e.target)&&!document.getElementById("icon").contains(e.target))     
-          {document.getElementById("menu").style.visibility = "hidden";      
-         document.getElementById("icon").style.visibility = "visible";}
-    });
-  document.getElementById("exit-list").addEventListener('click', function(){
+    console.log(templateParams);
+    emailjs.send('service_oqnbbzb', 'template_yeufvle', templateParams)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById("user_name").value = ""
+            document.getElementById("message").value = ""
+            document.getElementById("subject").value = ""
+            document.getElementById("user_email").value = ""
+            window.alert("Your message has been sent")
+        }, function (error) {
+            window.alert("Your message has not been sent, please contact christopher.stevers1@gmail.com")
+            console.log('FAILED...', error);
+        });
+
+}
+
+window.addEventListener(`click`, function (e) {
+
+    if (document.getElementById("menu").style.visibility === "visible" && !document.getElementById("menu").contains(e.target) && !document.getElementById("icon").contains(e.target)) {
+        document.getElementById("menu").style.visibility = "hidden";
+        document.getElementById("icon").style.visibility = "visible";
+    }
+});
+document.getElementById("exit-list").addEventListener('click', function () {
     document.getElementById("icon").style.visibility = "visible";
     document.getElementById("menu").style.visibility = "hidden";
 
-  });
-  document.getElementById("icon").addEventListener('click',   function(){
-   document.getElementById("menu").style.visibility = "visible";
-   document.getElementById("icon").style.visibility = "hidden";});
+});
+document.getElementById("icon").addEventListener('click', function () {
+    document.getElementById("menu").style.visibility = "visible";
+    document.getElementById("icon").style.visibility = "hidden";
+});
 
 
-   const paraGraph=(x)=>{
-console.log(x)
-let returned;
-    switch(x){
+const paraGraph = (x) => {
+    console.log(x)
+    let returned;
+    switch (x) {
         case "calc":
             returned = `
             <h3>Feed Cost Calculator</h3>
@@ -84,62 +86,62 @@ let returned;
              found in farm records, and then calculates the cost of feed used from that data. A simple problem needs a simple solution, so I've used HTML CSS and JS to create this little tool. <div class="modal-link"><a href="https://christopher-stevers.github.io/Feed-Calc/">
              Live site</a><a href="https://github.com/Christopher-Stevers/Feed-Calc/tree/master">Code</a></div></p>`
 
-    break;
-   case "stonks":
-            returned=`
+            break;
+        case "stonks":
+            returned = `
             
-            <h3>Stock Tracker</h3>
-            <p>When I saw the twelvedata api in use in <a href="https://github.com/flyingfisch/FischBotDiscord-csharp">a discord bot</a> I was intrigued. 
-            At the time I was studying D3.js, so I built this SPA.
-             It allows the user to view a barchart visualization of the history of a stock of their choice over the past 30 weeks. 
-             It's bootstrapped with create-react-app, and the visualization is in D3.js
+            <h3>Soul Runner Site</h3>
+            <p>My collaborator on an indie game project was looking for an cms backed website and I wanted to learn Vue, so I built this beautiful site.
+            I designed it with figma, and built it on Nuxt3. It's also integrated with Netlify CMS for editing by non-technical team members.
+            Note that it is still being worked on, so the links don't go anywhere, and the assets are not finalized.
              <div class="modal-link">
-             <a href="https://fervent-bassi-16f84e.netlify.app/">
-             Live site</a><a href="https://github.com/Christopher-Stevers/stock-tracker">Code</a></div></p>`
-    
-    break;
-    case "whirl": 
-         returned=`
+             <a href="https://friendly-brown-1d77de.netlify.app/">
+             Live site</a><a href="https://github.com/Christopher-Stevers/Soul-Runner-Site">Code</a></div></p>`
+
+            break;
+        case "whirl":
+            returned = `
          <h3>Whirl Creek Farm Demo</h3><p>My parent's farm was lacking in online presence, which could be a valuable asset for their organic direct sales. To solve this problem I created a modern website which allows the user to browse products, contact us, and send their orders to my email. 
          As this site is currently a demo, orders from it will not be filled, and the contact information is not accurate. It was built on create-react-app.<div class="modal-link"><a href="https://whirlcreekfarm.ga/">
          Live site</a><a href="https://github.com/Christopher-Stevers/actual-react-whirl">Code</a></div></p>`
-    break;
-    case "kanbeano":
-        returned=`<h3>Kanbeano</h3><p>Kanbeano is my take on the Kanban board. It allows the user to build shareable lists, save and edit them, all in a beautiful, responsive UI.
+            break;
+        case "kanbeano":
+            returned = `<h3>Kanbeano</h3><p>Kanbeano is my take on the Kanban board. It allows the user to build shareable lists, save and edit them, all in a beautiful, responsive UI.
          Kanbeano is built with MongoDB and leverages Next.js for server-side rendering and serveless functions. <div class="modal-link"><a href="https://new-kanbeano.vercel.app/">
-          Live site</a><a href="https://github.com/Christopher-Stevers/NewKanbeano">Code</a></div></p>` 
-          break;}
-return returned
+          Live site</a><a href="https://github.com/Christopher-Stevers/NewKanbeano">Code</a></div></p>`
+            break;
+    }
+    return returned
 
-   }
-   const overlayFunc=(e)=>{
-       if(document.querySelector(".fixed")){
-        const modal= document.querySelector(".fixed");
-         modal.remove();
-   }
-       const myText=paraGraph(e.target.id);
-       const newElem=document.createElement("div");
-       newElem.id=e.target.id+"overlay";
-       newElem.className="fixed"
-       newElem.innerHTML=`<div class="wrapper"><button class=${e.target.id}>x</button>${myText}</div>`
-       console.log(document.querySelector("body"));
-       if(newElem){
-     document.getElementById("portfolio-page").appendChild(newElem);
-     const removeModal=()=>{
-        console.log(e.target.className);
-        let elemId=e.target.className+"overlay"
-        let elem=document.getElementById(elemId);
-        console.log(elem)
-      if(document.querySelector(".fixed")) document.querySelector(".fixed").remove();
-
-     }
-    document.querySelector("."+e.target.id).addEventListener("click", removeModal);
-    document.querySelector(".fixed", removeModal).addEventListener("click", removeModal);
 }
+const overlayFunc = (e) => {
+    if (document.querySelector(".fixed")) {
+        const modal = document.querySelector(".fixed");
+        modal.remove();
+    }
+    const myText = paraGraph(e.target.id);
+    const newElem = document.createElement("div");
+    newElem.id = e.target.id + "overlay";
+    newElem.className = "fixed"
+    newElem.innerHTML = `<div class="wrapper"><button class=${e.target.id}>x</button>${myText}</div>`
+    console.log(document.querySelector("body"));
+    if (newElem) {
+        document.getElementById("portfolio-page").appendChild(newElem);
+        const removeModal = () => {
+            console.log(e.target.className);
+            let elemId = e.target.className + "overlay"
+            let elem = document.getElementById(elemId);
+            console.log(elem)
+            if (document.querySelector(".fixed")) document.querySelector(".fixed").remove();
 
-       
-       
-       
-       }
-   const hovers=document.querySelectorAll(".hover-div");
-   hovers.forEach(elem=>elem.addEventListener("click", overlayFunc));
+        }
+        document.querySelector("." + e.target.id).addEventListener("click", removeModal);
+        document.querySelector(".fixed", removeModal).addEventListener("click", removeModal);
+    }
+
+
+
+
+}
+const hovers = document.querySelectorAll(".hover-div");
+hovers.forEach(elem => elem.addEventListener("click", overlayFunc));
