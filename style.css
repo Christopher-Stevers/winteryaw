@@ -194,6 +194,25 @@ strong {
 body {
   background-color: var(--light-bg-color);
 }
+.social-links{display: flex;
+  z-index: 80;
+position: absolute; top: 0px;
+right: 0px;
+overflow: hidden;
+border-bottom-left-radius: 8px;}
+.social-links>a>svg{width: 24px; height: 24px;
+  cursor: pointer;
+  fill: var(--main-bg-color);
+padding: 0px;
+margin: 6px;
+margin-right: 12px;}
+.social-links>a:hover{ transform: scale(1.05);}
+.github{border-radius: 50%;
+  box-shadow: inset var(--main-bg-color) 0px 0px 0px 1px;
+background-color: var(--light-bg-color);}
+.social-links>a>svg.twitter{height: 22px;
+position: relative;
+top: 1px;}
 #tech-page {
   width: 70%;
   display: grid;
@@ -292,9 +311,14 @@ ul.icon-list > li {
   grid-template-columns: repeat(auto-fit, 400px);
 position: absolute;
 top: 0px;}
-div.portfolio-img{background-color: #000000;
-opacity: 0;}
-div.portfolio-img:hover{opacity: .7;}
+button.portfolio-img{background-color: #00000000;
+  color: transparent;
+  outline: transparent;
+  border: transparent;
+  font-size: 36px;}
+button.portfolio-img:hover{background-color: #000000b1;
+
+  color: var(--light-color);}
 @media screen and (max-width: 1330px) {
   #items {
     display: flex;
@@ -452,7 +476,7 @@ footer {
   grid-row: 1/2;
   justify-self: center;
   align-self: center;
-  z-index: 51;
+  z-index: 81;
   box-shadow: 0 0 6px 2px #00000093;
   display: none;
 }
@@ -549,6 +573,7 @@ footer {
 }
 @media screen and (max-width: 500px){
   .portfolio-head, #about>h2{font-size: 48px;}
+  h1{ margin-top: 48px;}
   #about>h2{left: 0px;}
   #about>div{font-size: 20px;}
   
@@ -557,3 +582,4 @@ footer {
 
   .terminal{display: none}  
 }
+line:hover{cursor: pointer;}

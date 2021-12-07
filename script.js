@@ -33,9 +33,9 @@ const typeOut = () => {
     gears.forEach(elem => {
         const time = sentence.length * 200;
         elem.style.transitionDuration = time.toString() + "ms";
-        
+
     });
-    
+
     const sentenceArr = [...sentence];
     let activeSentence = "";
     const elem = document.createElement("p");
@@ -81,7 +81,7 @@ gears.forEach(elem => {
 
     });
 })
-if(document.querySelector(".terminal").style.display !=="none")typeOut();
+if (document.querySelector(".terminal").style.display !== "none") typeOut();
 const portfolio = [
     {
         path: "kanbeano.png",
@@ -136,9 +136,9 @@ const portfolio = [
         copy: `
     <li>
     My family had to go through the tedious task of finding the cost of production on our hogs, and I wanted a more sophisticated method.</li>
-    <liThis is allows the user to input some simple data which can be found in farm records, and then
+    <li>This tool allows the user to input some simple data which can be found in farm records, and then
     calculates the cost of feed used from that data.</li>
-    <li>This little tool is created with HTML CSS and JS.</li>`,
+    <li>This little tool was created with HTML, CSS, and JS.</li>`,
         secondary: "",
         site: "https://github.com/Christopher-Stevers/Feed-Calc/tree/master",
         code: "https://christopher-stevers.github.io/Feed-Calc/"
@@ -155,18 +155,19 @@ const openModal = (e) => {
     const sec = document.querySelector(".secondary-img");
     main.src = portfolio[index].path;
     sec.src = portfolio[index].secondary;
-    if (portfolio[index].secondary === "") { sec.style.display="none" };
+    if (!portfolio[index].secondary) { sec.style.display = "none" }
+    else { sec.style.display = "static" };
     const list = document.querySelector(".modal>ul");
     list.innerHTML = portfolio[index].copy;
     const listItem = document.createElement("li");
     listItem.className = "links";
     list.appendChild(listItem);
     listItem.innerHTML = `<a href="${portfolio[index].site}">Site</a><a href="${portfolio[index].code}">Code</a>`
-    
 
-setTimeout(() => {document.querySelector(".hidden").classList.remove("hidden");},50)
+
+    setTimeout(() => { document.querySelector(".hidden").classList.remove("hidden"); }, 50)
 
 
 }
-document.querySelectorAll("div.portfolio-img").forEach((elem, index) => { elem.addEventListener("click", openModal) });
+document.querySelectorAll("button.portfolio-img").forEach((elem, index) => { elem.addEventListener("click", openModal) });
 document.getElementById("exit-list").addEventListener("click", hideModal);
