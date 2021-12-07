@@ -78,6 +78,8 @@ const typeOut = () => {
 }
 gears.forEach(elem => {
     elem.addEventListener('mouseover', () => {
+        console.log("yet");
+        console.log(gears);
         typeOut();
 
     });

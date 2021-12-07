@@ -73,6 +73,7 @@ h1 {
 .terminal > p {
   margin: 0;
 }
+.terminal >img{z-index: 70;}
 
 .terminal > img:nth-child(1) {
   left: -24px;
