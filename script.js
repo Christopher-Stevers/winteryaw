@@ -82,7 +82,7 @@ gears.forEach(elem => {
 
     });
 })
-if(document.querySelector(".terminal").style.display!==none)typeOut();
+if(document.querySelector(".terminal").style.display !=="none")typeOut();
 const portfolio = [
     {
         path: "kanbeano.png",
