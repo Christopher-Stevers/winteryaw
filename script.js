@@ -1,147 +1,173 @@
-  //from Sucheta https://medium.com/@shrivastavasucheta/sending-an-email-using-emailjs-gmail-service-to-be-used-in-javascript-d6eb92ed0c7c
- /* $(document).ready(function () {
-        $("#contact-form").submit(function (e) {
-            const form = document.querySelector('form[id="contact-form"] ');
-            const username = form.elements["user_name"].value;
-            const userMail = form.elements["user_email"].value;
-            const subject = form.elements["subject"].value;
-            const message = form.elements["message"].value;
-            e.preventDefault();
-            var data = {
-                service_id: "service_oqnbbzb",
-                template_id: "template_2ogzbrc",
-                user_id: "user_2alctVHDRyRs2gc1ntQhw",
-                template_params: {
-                    from_name: username,
-                    from_email: userMail,
-                    to_name: "Chris",
 
-                    subject: subject,
-                    message: message
-                }
-            };
-            $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
-                type: "POST",
-                data: JSON.stringify(data),
-                contentType: "application/json"
-            }).done(function () {
-                alert("Your mail is sent!");
-            }).fail(function (error) {
-                alert("Oops… " + JSON.stringify(error));
-            })
-        })
-    })*/document.getElementById("send").addEventListener("click", function (event) {
-        event.preventDefault()
+const gear1 = document.querySelector(".terminal>img:nth-child(1)");
+const gear2 = document.querySelector(".terminal>img:nth-child(2)");
+const gear3 = document.querySelector(".terminal>img:nth-child(3)");
+const gears = document.querySelectorAll(".terminal>img");
+const sentence1 = `I develop websites.`;
+const sentence2 = `I develop web apps.`;
+const sentence3 = `I develop software.`;
+let active = {
+    value: false,
+    currentSentence: 0,
+    gear1rot: 90,
+    gear2rot: -40,
+    gear3rot: -70
+
+
+}
+const arrOfSentences = [sentence1, sentence2, sentence3];
+const typeOut = () => {
+
+    if (active.value || active.currentSentence === 3) return
+
+    active.value = true;
+
+    gear1.style.transform = `rotate(${active.gear1rot.toString()}deg)`;
+    gear2.style.transform = `rotate(${active.gear2rot.toString()}deg)`;
+    gear3.style.transform = `rotate(${active.gear3rot.toString()}deg)`;
+    active.gear1rot = active.gear1rot + 90;
+    active.gear2rot = active.gear2rot - 90;
+    active.gear3rot = active.gear3rot - 90;
+
+    console.log(active);
+    const sentence = arrOfSentences[active.currentSentence];
+    gears.forEach(elem => {
+        const time = sentence.length * 200;
+        elem.style.transitionDuration = time.toString() + "ms";
+        console.log(elem);
     });
-const sendEmail = () => {
-    let templateParams = {
-        user_name: document.getElementById("user_name").value,
-        user_email: document.getElementById("user_email").value,
-        message: document.getElementById("message").value,
-        subject: document.getElementById("subject").value
-    }
-    console.log(templateParams);
-    emailjs.send('service_oqnbbzb', 'template_yeufvle', templateParams)
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            document.getElementById("user_name").value = ""
-            document.getElementById("message").value = ""
-            document.getElementById("subject").value = ""
-            document.getElementById("user_email").value = ""
-            window.alert("Your message has been sent")
-        }, function (error) {
-            window.alert("Your message has not been sent, please contact christopher.stevers1@gmail.com")
-            console.log('FAILED...', error);
-        });
+    console.log(sentence.length)
+    const sentenceArr = [...sentence];
+    let activeSentence = "";
+    const elem = document.createElement("p");
+    const terminal = document.querySelector(".terminal");
+    terminal.appendChild(elem);
+    const elem1 = document.querySelector(".i-develop");
+    const elem2 = document.querySelector(".websites");
+    elem1.innerText = "";
+    elem2.innerText = "";
+    elem.innerText = `console.log(${sentence});`;
+    const recursivePrinting = (activeSentence) => {
+        if (activeSentence.length > sentence.length) {
+            active.value = false;
+            active.currentSentence = active.currentSentence + 1;
+            return
+        }
+        if (activeSentence.length < 10) {
+            setTimeout(() => {
+                const newSentence = activeSentence.concat(sentenceArr[activeSentence.length]);
 
-}
+                elem1.innerText = activeSentence;
 
-window.addEventListener(`click`, function (e) {
+                recursivePrinting(newSentence)
+            }, 100);
 
-    if (document.getElementById("menu").style.visibility === "visible" && !document.getElementById("menu").contains(e.target) && !document.getElementById("icon").contains(e.target)) {
-        document.getElementById("menu").style.visibility = "hidden";
-        document.getElementById("icon").style.visibility = "visible";
-    }
-});
-document.getElementById("exit-list").addEventListener('click', function () {
-    document.getElementById("icon").style.visibility = "visible";
-    document.getElementById("menu").style.visibility = "hidden";
-
-});
-document.getElementById("icon").addEventListener('click', function () {
-    document.getElementById("menu").style.visibility = "visible";
-    document.getElementById("icon").style.visibility = "hidden";
-});
-
-
-const paraGraph = (x) => {
-    console.log(x)
-    let returned;
-    switch (x) {
-        case "calc":
-            returned = `
-            <h3>Feed Cost Calculator</h3>
-            <p>Every other quarter, my family had to go through the tedious task of finding the cost of production on our hogs.
-            This is my solution to this problem. It allows the user to input some simple data which can be
-             found in farm records, and then calculates the cost of feed used from that data. A simple problem needs a simple solution, so I've used HTML CSS and JS to create this little tool. <div class="modal-link"><a href="https://christopher-stevers.github.io/Feed-Calc/">
-             Live site</a><a href="https://github.com/Christopher-Stevers/Feed-Calc/tree/master">Code</a></div></p>`
-
-            break;
-        case "stonks":
-            returned = `
-            
-            <h3>Soul Runner Site</h3>
-            <p>My collaborator on an indie game project was looking for an cms backed website and I wanted to learn Vue, so I built this beautiful site.
-            I designed it with figma, and built it on Nuxt3. It's also integrated with Netlify CMS for editing by non-technical team members.
-            Note that it is still being worked on, so the links don't go anywhere, and the assets are not finalized.
-             <div class="modal-link">
-             <a href="https://friendly-brown-1d77de.netlify.app/">
-             Live site</a><a href="https://github.com/Christopher-Stevers/Soul-Runner-Site">Code</a></div></p>`
-
-            break;
-        case "whirl":
-            returned = `
-         <h3>Whirl Creek Farm Demo</h3><p>My parent's farm was lacking in online presence, which could be a valuable asset for their organic direct sales. To solve this problem I created a modern website which allows the user to browse products, contact us, and send their orders to my email. 
-         As this site is currently a demo, orders from it will not be filled, and the contact information is not accurate. It was built on create-react-app.<div class="modal-link"><a href="https://whirlcreekfarm.ga/">
-         Live site</a><a href="https://github.com/Christopher-Stevers/actual-react-whirl">Code</a></div></p>`
-            break;
-        case "kanbeano":
-            returned = `<h3>Kanbeano</h3><p>Kanbeano is my take on the Kanban board. It allows the user to build shareable lists, save and edit them, all in a beautiful, responsive UI.
-         Kanbeano is built with MongoDB and leverages Next.js for server-side rendering and serveless functions. <div class="modal-link"><a href="https://new-kanbeano.vercel.app/">
-          Live site</a><a href="https://github.com/Christopher-Stevers/NewKanbeano">Code</a></div></p>`
-            break;
-    }
-    return returned
-
-}
-const overlayFunc = (e) => {
-    if (document.querySelector(".fixed")) {
-        const modal = document.querySelector(".fixed");
-        modal.remove();
-    }
-    const myText = paraGraph(e.target.id);
-    const newElem = document.createElement("div");
-    newElem.id = e.target.id + "overlay";
-    newElem.className = "fixed"
-    newElem.innerHTML = `<div class="wrapper"><button class=${e.target.id}>x</button>${myText}</div>`
-    console.log(document.querySelector("body"));
-    if (newElem) {
-        document.getElementById("portfolio-page").appendChild(newElem);
-        const removeModal = () => {
-            console.log(e.target.className);
-            let elemId = e.target.className + "overlay"
-            let elem = document.getElementById(elemId);
-            console.log(elem)
-            if (document.querySelector(".fixed")) document.querySelector(".fixed").remove();
 
         }
-        document.querySelector("." + e.target.id).addEventListener("click", removeModal);
-        document.querySelector(".fixed", removeModal).addEventListener("click", removeModal);
+        else {
+            setTimeout(() => {
+                const newSentence = activeSentence.concat(sentenceArr[activeSentence.length]);
+                elem2.innerText = activeSentence.slice(10);
+                recursivePrinting(newSentence)
+            }, 100);
+
+
+        }
     }
+    recursivePrinting(activeSentence);
+}
+gears.forEach(elem => {
+    elem.addEventListener('mouseover', () => {
+        typeOut();
 
+    });
+})
+if(document.querySelector(".terminal").style.display!==none)typeOut();
+const portfolio = [
+    {
+        path: "kanbeano.png",
+        copy: `
+    <li>Kanbeano is my take on the Kanban board.</li>
+    <li>It allows the user to build shareable lists, save and edit them, all in a
+    beautiful, responsive UI.</li>
+    <li>Kanbeano is built with MongoDB and leverages Next.js for server-side rendering and serveless
+    functions.</li>`,
+        secondary: "",
+        site: "https://new-kanbeano.vercel.app/",
+        code: "https://github.com/Christopher-Stevers/NewKanbeano"
+    },
+    {
+        path: "unknown.png",
+        copy: `
+    <li>My indie dev team needed a marketing website to showcase our coming release. </li>
+    <li>We wanted to showcase our game with striking visuals, direct the user to points of sale, and allow them to
+        contact us.</li>
+    <li>I created this site on Nuxt3 , with editing through Netlify CMS.</li>`,
+        secondary: "cms.png",
+        site: "https://friendly-brown-1d77de.netlify.app/",
+        code: "https://github.com/Christopher-Stevers/Soul-Runner-Site"
+    },
+    {
+        path: "whirlcreekfarm.ga_-min.webp",
+        copy: `
+    <li>
+    My parent's farm was lacking in online presence, which could be a valuable asset for their organic direct sales.</li>
+    <li>To
+    solve this problem I created a modern website which allows the user to browse products, contact us, and send their
+    orders to my email. As this site is currently a demo, orders from it will not be filled, and the contact information is
+    not accurate.</li>
+    <li>I built this site with create-react-app, SCSS and css modules.</li>`,
+        secondary: "",
+        site: "https://whirlcreekfarm.ga/",
+        code: "https://github.com/Christopher-Stevers/actual-react-whirl"
+    },
+    {
+        path: "scribo.png",
+        copy: `
+    <li>I wanted a personal blog which combined a good authoring experience with full control over styles</li>
+    <li>Using a modern static site generator I was able to template out my site with my own styles.
+    I then integrated Netlify CMS with my github repo, for a great authoring experience.</li>
+    <li>I created this site with eleventy, with editing through Netlify CMS.</li>`,
+        secondary: "",
+        site: "https://christopherstevers.cf/",
+        code: "https://github.com/Christopher-Stevers/Scribo"
+    },
+    {
+        path: "ration.png",
+        copy: `
+    <li>
+    My family had to go through the tedious task of finding the cost of production on our hogs, and I wanted a more sophisticated method.</li>
+    <liThis is allows the user to input some simple data which can be found in farm records, and then
+    calculates the cost of feed used from that data.</li>
+    <li>This little tool is created with HTML CSS and JS.</li>`,
+        secondary: "",
+        site: "https://github.com/Christopher-Stevers/Feed-Calc/tree/master",
+        code: "https://christopher-stevers.github.io/Feed-Calc/"
+    },
 
+];
+const hideModal = () => {
+
+    document.querySelector(".overlay").classList.add("hidden");
+}
+const openModal = (e) => {
+    const index = parseInt(e.target.dataset.index);
+    const main = document.querySelector(".main-img");
+    const sec = document.querySelector(".secondary-img");
+    main.src = portfolio[index].path;
+    sec.src = portfolio[index].secondary;
+    if (portfolio[index].secondary === "") { sec.style.display="none" };
+    const list = document.querySelector(".modal>ul");
+    list.innerHTML = portfolio[index].copy;
+    const listItem = document.createElement("li");
+    listItem.className = "links";
+    list.appendChild(listItem);
+    listItem.innerHTML = `<a href="${portfolio[index].site}">Site</a><a href="${portfolio[index].code}">Code</a>`
+    
+
+setTimeout(() => {document.querySelector(".hidden").classList.remove("hidden");},50)
 
 
 }
-const hovers = document.querySelectorAll(".hover-div");
-hovers.forEach(elem => elem.addEventListener("click", overlayFunc));
+document.querySelectorAll("div.portfolio-img").forEach((elem, index) => { elem.addEventListener("click", openModal) });
+document.getElementById("exit-list").addEventListener("click", hideModal);
