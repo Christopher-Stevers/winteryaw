@@ -29,14 +29,13 @@ const typeOut = () => {
     active.gear2rot = active.gear2rot - 90;
     active.gear3rot = active.gear3rot - 90;
 
-    console.log(active);
     const sentence = arrOfSentences[active.currentSentence];
     gears.forEach(elem => {
         const time = sentence.length * 200;
         elem.style.transitionDuration = time.toString() + "ms";
-        console.log(elem);
+        
     });
-    console.log(sentence.length)
+    
     const sentenceArr = [...sentence];
     let activeSentence = "";
     const elem = document.createElement("p");
@@ -78,8 +77,6 @@ const typeOut = () => {
 }
 gears.forEach(elem => {
     elem.addEventListener('mouseover', () => {
-        console.log("yet");
-        console.log(gears);
         typeOut();
 
     });
