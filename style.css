@@ -470,7 +470,7 @@ footer {
   position: relative;
   width: 30vw;
   justify-self: start;
-  aspect-ratio: 60/35;
+  aspect-ratio:1526/801;
   box-shadow: inset var(--modal-bg-color) 0px 0px 8px 4px;
   display: none;
 }
