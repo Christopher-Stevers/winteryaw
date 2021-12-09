@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playball&family=Raleway:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Raleway:wght@100;400;700&display=swap");
 
 :root {
   --main-bg-color: #000000;
@@ -22,6 +22,7 @@
   z-index: inherit;
 }
 body{
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
   width: 100%;overflow-x:hidden}
 header {
   height: 100vh;
@@ -115,6 +116,7 @@ h1 {
   background-color: var(--light-bg-color);
 }
 .my-job {
+  z-index: 90
   grid-template-columns: 1fr 1fr 1fr;
 }
 @media screen and (min-width: 700px) {
@@ -142,13 +144,14 @@ h1 {
   display: relative;
   display: flex;
   flex-direction: column;
-  z-index: 56;
+  z-index: 96;
 }
 .my-job > h2 {
   align-self: end;
 }
 .my-job > h2 > .websites {
-  z-index: 56;
+  overflow: visible;
+  z-index: 96;
   position: relative;
   left: 64px;
   min-width: 100px;
