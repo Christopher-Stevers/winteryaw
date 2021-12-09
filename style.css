@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Raleway:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Playball&family=Raleway:wght@100;400;700&display=swap");
 
 :root {
   --main-bg-color: #000000;
@@ -198,7 +198,9 @@ body {
   background-color: var(--light-bg-color);
 }
 .social-links{display: flex;
+  box-shadow: 0px 0px 2px 2px black;
   z-index: 80;
+  background-color: var(--light-bg-color);
 position: absolute; top: 0px;
 right: 0px;
 overflow: hidden;
@@ -237,6 +239,9 @@ top: 1px;}
 }
 #tech-page > div.icons > ul {
   margin-right: 2em;
+}
+#tech-page>div>p, #tech-page>div>ul>li>span{
+  opacity: 55;
 }
 p:last-child {
   margin: 0px;
@@ -586,3 +591,5 @@ footer {
   .terminal{display: none}  
 }
 line:hover{cursor: pointer;}
+svg{fill: #000000d9;
+}
