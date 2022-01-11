@@ -140,8 +140,8 @@ const portfolio = [
     calculates the cost of feed used from that data.</li>
     <li>This little tool was created with HTML, CSS, and JS.</li>`,
         secondary: "",
-        site: "https://github.com/Christopher-Stevers/Feed-Calc/tree/master",
-        code: "https://christopher-stevers.github.io/Feed-Calc/"
+        site: "https://christopher-stevers.github.io/Feed-Calc/",
+        code: "https://github.com/Christopher-Stevers/Feed-Calc/"
     },
 
 ];
