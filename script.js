@@ -120,7 +120,7 @@ const portfolio = [
         site: "https://whirlcreekfarm.ga/",
         code: "https://github.com/Christopher-Stevers/actual-react-whirl"
     },
-    {
+  /*  {
         path: "scribo.png",
         copy: `
     <li>I wanted a personal blog which combined a good authoring experience with full control over styles</li>
@@ -142,7 +142,7 @@ const portfolio = [
         secondary: "",
         site: "https://christopher-stevers.github.io/Feed-Calc/",
         code: "https://github.com/Christopher-Stevers/Feed-Calc/"
-    },
+    },*/
 
 ];
 const hideModal = () => {

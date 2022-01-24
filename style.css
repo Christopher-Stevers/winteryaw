@@ -15,7 +15,13 @@
   --h1-font: clamp(3rem, 8vw, 4rem);
   --h2-font: clamp(1.5rem, 3.5vw, 3rem);
   --modal-text-color: #fcf0c8;
-  font-size: 16px;
+  font-size: 18px;
+}
+@media screen and (min-width: 2300px) {
+}
+@media screen and (min-width: 3000px) {
+  
+  :root{font-size: 32px;}
 }
 * {
   margin: 0px;
@@ -43,8 +49,8 @@ p {
   z-index: 1;
 }
 h1 {
-  font-weight: 100;
-  font-size: 48px;
+  font-weight: 200;
+  font-size: 4rem;
 }
 .my-name {
   background-color: var(--main-bg-color);
@@ -101,13 +107,14 @@ h1 {
   justify-self: center;
   align-self: center;
   width: 60%;
-  max-width: 240px;
+  max-width: 15rem;
   position: relative;
-  top: 180px;
-  height: 120px;
+  top: 100px;
+  height: 9rem;
   background-color: #eeebdd;
   padding: 30px;
   font-family: Playball;
+  font-size: 1.25rem;
 }
 
 .line {
@@ -135,7 +142,7 @@ h1 {
 }
 @media screen and (min-width: 500px) {
   h1 {
-    font-size: 96px;
+    font-size: 6rem;
   }
 }
 .my-job > h2 {
@@ -195,7 +202,7 @@ h1 {
 strong {
   padding: 20px 0px 20px 24px;
   white-space: nowrap;
-  font-size: 28px;
+  font-size:2rem;
 }
 body {
   background-color: var(--light-bg-color);
@@ -230,7 +237,7 @@ top: 1px;}
   grid-template-rows: 1fr 1fr;
 }
 #tech-page > div {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 150%;
   max-width: 90%;
 }
@@ -296,7 +303,7 @@ ul.icon-list > li {
 }
 
 .icon-list > li > span {
-  font-size: 24px;
+  font-size: 1.25rem;
   line-height: 48px;
   padding-left: 1rem;
 }
@@ -307,8 +314,8 @@ ul.icon-list > li {
   grid-gap: 24px;
   grid-row-gap: 64px;
   margin: 0px;
-  max-width: 1500px;
-  grid-template-columns: repeat(auto-fit, 400px);
+  max-width: 100rem;
+  grid-template-columns: repeat(auto-fit, 25rem);
 }
 .hovers{
   padding: 0 10% 10vh;
@@ -318,15 +325,15 @@ ul.icon-list > li {
   grid-row-gap: 64px;
   width:80%;
   margin: auto;
-  max-width: 1500px;
-  grid-template-columns: repeat(auto-fit, 400px);
+  max-width: 100rem;
+  grid-template-columns: repeat(auto-fit, 25rem);
 position: absolute;
 top: 0px;}
 button.portfolio-img{background-color: #00000000;
   color: transparent;
   outline: transparent;
   border: transparent;
-  font-size: 36px;}
+  font-size: 2.25rem;}
 button.portfolio-img:hover{background-color: #000000b1;
 
   color: var(--light-color);}
@@ -349,15 +356,15 @@ button.portfolio-img:hover{background-color: #000000b1;
   padding-left: calc(10% - 0.6em);
   text-align: left;
   font-weight: 400;
-  font-size: 96px;
+  font-size: 6rem;
   line-height: 150%;
   font-family: Raleway;
 }
 .relative{position: relative;}
 .portfolio-img{
   position: relative;
-  width: 300px;
-  height: 150px;
+  width: 20rem;
+  height: 10rem;
 
 }
 div.portfolio-img{background-color: #000000;}
@@ -367,7 +374,7 @@ div.portfolio-img{background-color: #000000;}
 }
 #about {
   grid-template-rows: min-content min-content auto;
-  font-size: 24px;
+  font-size: 1.5rem;
   background-color: var(--complement-bg-color);
   color: var(--light-color);
   padding: 0 10%;
@@ -380,7 +387,7 @@ div.portfolio-img{background-color: #000000;}
 #about > h2 {
   padding-top: 48px;
   margin-bottom: 24px;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 200;
   font-family: Raleway;
 }
@@ -410,7 +417,7 @@ div.portfolio-img{background-color: #000000;}
     grid-column: 1/2;
   }
   #about > h2 {
-    font-size: 96px;
+    font-size: 6rem;
     padding-top: 96px;
     padding-bottom: 48px;
   }
@@ -495,7 +502,7 @@ footer {
   color: var(--modal-text-color);
   display: grid;
   align-self: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 150%;
   align-content: center;
   list-style: none;
@@ -586,7 +593,7 @@ footer {
   .portfolio-head, #about>h2{font-size: 48px;}
   h1{ margin-top: 48px;}
   #about>h2{left: 0px;}
-  #about>div{font-size: 20px;}
+  #about>div{font-size: 1.25rem;}
   
 }
 @media screen  and (max-width: 700px) {
