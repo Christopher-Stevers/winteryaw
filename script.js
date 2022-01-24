@@ -171,3 +171,32 @@ const openModal = (e) => {
 }
 document.querySelectorAll("button.portfolio-img").forEach((elem, index) => { elem.addEventListener("click", openModal) });
 document.getElementById("exit-list").addEventListener("click", hideModal);
+// https://www.w3.org/WAI/GL/wiki/Making_actions_keyboard_accessible_by_using_keyboard_event_handlers_with_WAI-ARIA_controls
+function keyHandler(event)
+  {
+    switch (event.keyCode) {
+      case 32: {
+        event.stopPropagation;
+        return hideModal();
+      }
+    } //end switch
+    return true;
+  }
+  // https://medium.com/@im_rahul/focus-trapping-looping-b3ee658e5177
+  function keyboardHandler(e) {
+  const firstFocusableEl=document.querySelector(".links>a");
+  const lastFocusableEl=document.querySelector(".unset")
+    if (e.keyCode === 9) {
+      //Rotate Focus
+      if (e.shiftKey && document.activeElement === firstFocusableEl) {
+        e.preventDefault();
+        lastFocusableEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastFocusableEl) {
+        e.preventDefault();
+        firstFocusableEl.focus();
+      }
+    }
+  };
+  const el=document.querySelector(".modal")
+  el.addEventListener('keydown', keyboardHandler);
+document.querySelector(".unset").addEventListener("keydown", keyHandler);
