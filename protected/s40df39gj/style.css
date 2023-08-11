@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400&display=swap");
+
+body {
+  margin: 0px;
+}
+main {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-content: center;
+  background-color: #fff;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0;
+  margin: 24px 0;
+}
+.montreal {
+  font-family: "Lobster", cursive;
+  font-size: 8rem;
+  line-height: 8rem;
+  font-weight: 400;
+  color: #cd3226;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .montreal {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  main {
+    font-size: 16px;
+  }
+  .center {
+    display: none;
+  }
+}
+.between {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: Roboto;
+}
+p {
+  margin: 24px 0;
+}
+.top {
+  display: flex;
+
+  justify-content: space-between;
+}
+.top > img {
+  position: relative;
+  top: -52px;
+}
+.center {
+  position: absolute;
+  top: -20px;
+  margin-left: -100px;
+  width: 200px;
+}
+.st-joseph {
+  position: absolute;
+  top: 30px;
+  height: 64px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.st-joseph > img {
+  height: 64px;
+  width: 48px;
+  position: relative;
+  left: -12px;
+}
